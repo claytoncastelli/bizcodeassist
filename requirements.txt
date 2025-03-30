@@ -1,0 +1,10 @@
+# Fichier requirements.txt
+pytest==6.2.5
+#scraper
+beautifulsoup4==4.11.1
+requests==2.28.1
+selenium==4.7.0
+webdriver-manager==3.8.3
+#rest api
+flask==2.2.2
+Werkzeug>=2.2,<3.0
