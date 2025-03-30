@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  bizcodeassist:
+    build: .  # Utiliser le Dockerfile à la racine du projet
+    container_name: bizcodeassist_container
+    ports:
+      - "8080:8080"  # Mappage du port 8080 du conteneur vers la machine locale
+    volumes:
+      - .:/app  # Montage du répertoire local dans le conteneur (pour le développement)
+    environment:
+      - PYTHONUNBUFFERED=1  # Pour garantir que la sortie Python n'est pas mise en mémoire tampon
+    networks:
+      - bizcodeassist_network
+
+networks:
+  bizcodeassist_network:
+    driver: bridge
