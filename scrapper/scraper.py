@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urlparse, urljoin
 import time
+import re
 
 
 class FlexibleScraper:
@@ -144,8 +145,18 @@ class FlexibleScraper:
         else:
             return "Impossible d'accéder à la page."
 
+    def remove_white_spaces(self, content):
+        """
+        Supprimer les espaces multiples entre les mots.
+        """
+        if content:
+            content = re.sub(r"\n+", "\n", content)
+            content = "\n".join(" ".join(line.split()) for line in content.splitlines())
+        return content
+
+
     def scrape(self):
         """
         Démarrez le processus de scraping à l’URL initiale et recherchez les pages internes.
         """
-        return self.scrape_page(self.url)
+        return self.remove_white_spaces(self.scrape_page(self.url))
