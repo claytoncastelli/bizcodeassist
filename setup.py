@@ -28,7 +28,7 @@ setup(
         'torch',
         'hf_xet'
         'setuptools >= 38.6.0',
-        'wheel >= 0.31.0',
+        "wheel==0.38.1",
         'twine >= 1.11.0',
         'build',
     ],
@@ -53,7 +53,7 @@ setup(
         # "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.8',  # Spécifie la version minimale de Python
+    python_requires='>=3.12.3',  # Spécifie la version minimale de Python
     include_package_data=True,  # Inclut des fichiers supplémentaires (par exemple, des fichiers statiques)
     long_description= long_description,  # Lire la documentation README
     long_description_content_type="text/markdown",  # Format du README

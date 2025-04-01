@@ -1,6 +1,6 @@
 # Fichier requirements.txt
 setuptools >= 38.6.0
-wheel >= 0.31.0
+wheel >= 0.38.1
 twine >= 1.11.0
 pytest==6.2.5
 build
@@ -22,3 +22,14 @@ transformers
 sentencepiece
 torch
 hf_xet
+#fairseq
+#fairseq
+#fairseq
+bitarray
+fastBPE
+hydra-core
+omegaconf
+regex
+requests
+sacremoses
+subword_nmt

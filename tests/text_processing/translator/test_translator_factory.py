@@ -3,7 +3,7 @@ import unittest
 from text_processing.translator.google_translator import GoogleTranslator
 from text_processing.translator.marian_mt_translator import MarianMTTranslator
 from text_processing.translator.mt_translate import MTranslator
-from text_processing.translator.tradutor_factory import TranslatorFactory
+from text_processing.translator.translator_factory import TranslatorFactory
 from text_processing.translator.translator_type import TranslatorType
 
 

@@ -8,7 +8,7 @@ class MarianMTTranslator(BaseTranslator):
         self.tokenizer = MarianTokenizer.from_pretrained(self.model_name)
         self.model = MarianMTModel.from_pretrained(self.model_name)
 
-    def traduzir(self, texto: str) -> str:
+    def translate(self, texto: str) -> str:
         inputs = self.tokenizer(texto, return_tensors="pt", padding=True, truncation=True)
         translation = self.model.generate(**inputs)
         return self.tokenizer.batch_decode(translation, skip_special_tokens=True)[0]
