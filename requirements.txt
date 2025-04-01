@@ -1,10 +1,23 @@
 # Fichier requirements.txt
+setuptools >= 38.6.0
+wheel >= 0.31.0
+twine >= 1.11.0
 pytest==6.2.5
+build
 #scraper
 beautifulsoup4==4.11.1
-requests==2.28.1
+requests==2.32.0
 selenium==4.7.0
 webdriver-manager==3.8.3
 #rest api
 flask==2.2.2
 Werkzeug>=2.2,<3.0
+#translators
+#Googletrans
+googletrans==4.0.0-rc1
+#MTranslate
+mtranslate
+#MarianMT
+transformers
+sentencepiece
+torch

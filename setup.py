@@ -1,4 +1,10 @@
+# from distutils.core import setup
+# from setuptools import setup, find_packages
 from setuptools import setup, find_packages
+from pathlib import Path
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="bizcodeassist",  # Le nom du package
@@ -12,13 +18,22 @@ setup(
         "pytest>=6.2.5", # Tests
         'flask==2.2.2',  # Flask
         'beautifulsoup4==4.11.1',  # BeautifulSoup
-        'requests==2.28.1',  # Requests
+        "requests==2.32.0",  # Requests
         'selenium==4.7.0',  # Selenium
         'webdriver-manager==3.8.3',  # WebDriver Manager
+        'googletrans==4.0.0-rc1',  #Googletrans
+        'mtranslate',   #MTranslate
+        'transformers', #MarianMT
+        'sentencepiece',
+        'torch',
+        'setuptools >= 38.6.0',
+        'wheel >= 0.31.0',
+        'twine >= 1.11.0',
+        'build',
     ],
-    tests_require=[  # Dépendances spécifiques aux tests
-        "pytest>=6.2.5",
-    ],
+    # tests_require=[  # Dépendances spécifiques aux tests
+    #     "pytest>=6.2.5",
+    # ],
     extras_require={  # Dépendances supplémentaires (facultatif)
         "dev": [
             "flake8>=3.8.4",  # Outil d'analyse de code
@@ -34,11 +49,11 @@ setup(
     classifiers=[  # Classifications des projets (facultatif)
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
-        "License :: OSI Approved :: MIT License",
+        # "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',  # Spécifie la version minimale de Python
+    python_requires='>=3.8',  # Spécifie la version minimale de Python
     include_package_data=True,  # Inclut des fichiers supplémentaires (par exemple, des fichiers statiques)
-    long_description=open('README.md').read(),  # Lire la documentation README
+    long_description= long_description,  # Lire la documentation README
     long_description_content_type="text/markdown",  # Format du README
 )

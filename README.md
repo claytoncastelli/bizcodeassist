@@ -32,7 +32,7 @@ python -m unittest tests/test_module.py
 
 # Como rodar o flask
 1. Instale o pacote localmente (usando o setup.py):
-python setup.py install
+ python -m build
 2. Rode a aplicação Flask
 python app.py
 3. Acesse a API via curl ou Postman:
