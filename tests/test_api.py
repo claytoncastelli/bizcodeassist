@@ -2,7 +2,7 @@
 ### 5. **Testes**
 #```python
 import unittest
-from module3.api import app
+from service.api import app
 
 class TestScrapingAPI(unittest.TestCase):
 

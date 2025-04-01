@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from scrape_module.scraper import FlexibleScraper
+from scrapper.scraper import FlexibleScraper
 
 app = Flask(__name__)
 
