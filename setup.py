@@ -26,6 +26,7 @@ setup(
         'transformers', #MarianMT
         'sentencepiece',
         'torch',
+        'hf_xet'
         'setuptools >= 38.6.0',
         'wheel >= 0.31.0',
         'twine >= 1.11.0',

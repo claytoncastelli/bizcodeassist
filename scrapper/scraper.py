@@ -15,8 +15,8 @@ import time
 class FlexibleScraper:
     def __init__(self, url, scroll_infinite=False, min_content_size=500, max_depth=2):
         """
-        Inicializa o scraper com a URL do site, a opção de scroll infinito, o tamanho mínimo do conteúdo,
-        e a profundidade máxima para buscar outras páginas no mesmo site.
+        Initialisez le scraper avec une URL du site, une option de défilement infini, ou le minimum de contenu,
+        et une profondeur maximale pour rechercher d'autres pages sur mon site.
         """
         self.url = url
         self.scroll_infinite = scroll_infinite
