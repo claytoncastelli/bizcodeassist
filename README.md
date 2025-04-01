@@ -32,7 +32,7 @@ python -m unittest tests/test_module.py
 
 # Como rodar o flask
 1. Instale o pacote localmente (usando o setup.py):
-python setup.py install
+ python -m build
 2. Rode a aplicação Flask
 python app.py
 3. Acesse a API via curl ou Postman:
@@ -63,8 +63,47 @@ dist/
 4. Instalar o pacote no seu ambiente python
 pip install dist/my_project-0.1.0-py3-none-any.whl
 
+# Comparacao dos algoritimos
 
+1. Google Translate API (googletrans)
+Facile à utiliser
+Peut gérer de grandes quantités de texte
 
+Peut être bloqué après trop de requêtes
+Traduction parfois imprécise
+
+Traduction automatique via l'API de Google Traduction
+
+2. DeepL API (pas gratuit)
+Très bonne qualité de traduction
+
+Nécessite une clé API (compte requis)
+
+3. Fairseq (Meta AI)
+Modèle de traduction avancé basé sur l’apprentissage profond
+
+Requiert une configuration plus avancée
+
+Utilisé pour des traductions précises et personnalisables
+
+4. MTranslate (basé sur Google Translate)
+Alternative légère à googletrans 
+Utilise Google Translate sans API officielle
+Moins fiable que MarianMT
+Peut être bloqué par Google
+
+5. MarianMT (Hugging Face) - Open Source & Illimité
+Avantages :
+Gratuit et open-source
+Fonctionne en local (pas de limites d'API)
+Bonne qualité de traduction
+
+Pas besoin d'API ni de connexion Internet
+Aucun coût, même pour des millions de mots
+Fonctionne bien pour des traductions techniques et générales
+
+Meilleur  choix
+Pour un très grand volume de texte sans limite et sans frais → MarianMT
 
 ```bash
 python -m unittest discover tests/
