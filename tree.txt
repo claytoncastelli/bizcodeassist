@@ -1,0 +1,74 @@
+.
+├── config.py
+├── configs
+│   └── settings.yaml
+├── deploy
+│   └── entrypoint.sh
+├── docker-compose.yml
+├── Dockerfile
+├── docs
+│   └── index.md
+├── __init__.py
+├── main.py
+├── module2
+│   ├── __init__.py
+│   ├── module2.py
+│   └── __pycache__
+│       ├── __init__.cpython-39.pyc
+│       └── module2.cpython-39.pyc
+├── __pycache__
+│   └── __init__.cpython-310.pyc
+├── README.md
+├── requirements.txt
+├── scrapper
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-39.pyc
+│   │   └── scraper.cpython-39.pyc
+│   └── scraper.py
+├── scripts
+│   ├── setup.py
+│   └── setup.sh
+├── service
+│   ├── api.py
+│   ├── __init__.py
+│   └── __pycache__
+│       └── api.cpython-310.pyc
+├── setup.py
+├── setup.sh
+├── tests
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   └── test_api.cpython-310-pytest-6.2.5.pyc
+│   ├── test_api.py
+│   ├── test_module1.py
+│   ├── test_text_summamrizer.py
+│   └── text_processing
+│       ├── summarizer
+│       │   └── __init__.py
+│       └── translator
+│           ├── __init__.py
+│           ├── test_fairseq_translator.py
+│           ├── test_google_translator.py
+│           ├── test_marian_mt_translator.py
+│           ├── test_mt_translate.py
+│           └── test_translator_factory.py
+├── text_processing
+│   ├── summarizer
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── text_summarizer.cpython-310.pyc
+│   │   └── text_summarizer.py
+│   └── translator
+│       ├── fairseq_translator.py
+│       ├── google_translator.py
+│       ├── __init__.py
+│       ├── marian_mt_translator.py
+│       ├── mt_translate.py
+│       ├── translator_factory.py
+│       ├── translator.py
+│       └── translator_type.py
+└── tree.txt
+
+21 directories, 51 files
