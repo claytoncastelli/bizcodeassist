@@ -1,10 +1,11 @@
 from transformers import pipeline
 
 class TextSummarizer:
-    def __init__(self, model_name="facebook/bart-large-cnn"):
-        self.summarizer = pipeline("summarization", model=model_name)
+    def __init__(self):
+        # Initialize the summarization pipeline
+        self.summarizer = pipeline("summarization")
 
-    def summarize(self, text, max_length=200, min_length=50):
+    def summarize(self, text, max_length=1024, min_length=50):
         word_count = len(text.split())
         if word_count < min_length // 2:
             return text  # Return original if too short
@@ -12,11 +13,19 @@ class TextSummarizer:
         adjusted_max_length = min(max_length, word_count)
         adjusted_min_length = min(min_length, word_count // 2)
 
-        summary = self.summarizer(text, max_length=adjusted_max_length, min_length=adjusted_min_length, do_sample=False)
+        # Limit the text length to avoid index errors (character count is a rough estimate)
+        if len(text) > 1024:  # 1024 characters
+            text = text[:1024]
+
+        # Pass the text to the summarizer
+        summary = self.summarizer(text, max_length=adjusted_max_length, min_length=adjusted_min_length, do_sample=False, truncation=True)
+
+        # Print the results
         print("[summary]: ", summary)
         print("[summary][0][summary_text]: ", summary[0]["summary_text"])
 
         return summary[0]["summary_text"]
+
 
 if __name__ == "__main__":
     summarizer = TextSummarizer()

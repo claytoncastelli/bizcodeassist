@@ -1,5 +1,5 @@
 import unittest
-from text_processing.summarizer.TextSummarizer import TextSummarizer
+from text_processing.summarizer.text_summarizer import TextSummarizer
 
 class TestTextSummarizer(unittest.TestCase):
     def setUp(self):

@@ -9,8 +9,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urlparse, urljoin
+
 import time
 import re
+
+from text_processing.summarizer.text_summarizer import TextSummarizer
 
 
 class FlexibleScraper:
@@ -159,4 +162,23 @@ class FlexibleScraper:
         """
         Démarrez le processus de scraping à l’URL initiale et recherchez les pages internes.
         """
-        return self.remove_white_spaces(self.scrape_page(self.url))
+        print('[scraper.py, scrape()]')
+        summ = TextSummarizer()
+        orig_text = self.remove_white_spaces(self.scrape_page(self.url))
+        
+        summ_text = summ.summarize(orig_text)
+
+        print('==================')
+        print('[orig_text]: ', orig_text)
+        print('-----------')
+        print('[summ_text]: ', summ_text)
+        print('-----------')
+
+        return '[orig_text]: '+ orig_text + ' - [summ_text]: '+ summ_text
+
+if __name__ == "__main__":
+    url = "https://example.com"  # 🔁 Replace with a real test URL
+    scraper = FlexibleScraper(url, scroll_infinite=False)
+    result = scraper.scrape()
+    print(result)
+
