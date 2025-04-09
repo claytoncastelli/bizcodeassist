@@ -5,7 +5,7 @@ class TextSummarizer:
         # Initialize the summarization pipeline
         self.summarizer = pipeline("summarization")
 
-    def summarize(self, text, max_length=1024, min_length=50):
+    def summarize(self, text, max_length=120, min_length=30):
         word_count = len(text.split())
         if word_count < min_length // 2:
             return text  # Return original if too short
