@@ -1,8 +1,16 @@
 # Usando uma imagem base do Python
-FROM python:3.9-slim
+FROM python:3.8-slim
 
 # Definindo o diretório de trabalho no container
 WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    g++ \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copiando o arquivo de dependências (requirements.txt)
 COPY requirements.txt .

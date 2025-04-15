@@ -5,5 +5,5 @@ from abc import ABC, abstractmethod
 class BaseTranslator(ABC):
 
     @abstractmethod
-    def traduzir(self, texto: str) -> str:
+    def translate(self, texto: str) -> str:
         pass

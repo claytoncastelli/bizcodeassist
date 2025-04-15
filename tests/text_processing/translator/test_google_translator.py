@@ -9,7 +9,7 @@ class TesteGoogleTranslate(unittest.TestCase):
         self.google_tradutor = GoogleTranslator()
 
     def test_google_tradutor(self):
-        result = self.google_tradutor.traduzir(self.texto_teste)
+        result = self.google_tradutor.translate(self.texto_teste)
         self.assertIsInstance(result, str)
         self.assertEqual('Hello everyone', result)
 

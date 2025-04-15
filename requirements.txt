@@ -1,24 +1,37 @@
-# Fichier requirements.txt
-setuptools >= 38.6.0
-wheel >= 0.31.0
-twine >= 1.11.0
+setuptools>=38.6.0
+wheel>=0.38.1
+twine>=1.11.0
 pytest==6.2.5
 build
-#scraper
+
+# scraper
 beautifulsoup4==4.11.1
 requests==2.32.0
 selenium==4.7.0
 webdriver-manager==3.8.3
-#rest api
+
+# rest api
 flask==2.2.2
 Werkzeug>=2.2,<3.0
-#translators
-#Googletrans
+
+# translators
 googletrans==4.0.0-rc1
-#MTranslate
 mtranslate
-#MarianMT
+
+# MarianMT
 transformers
 sentencepiece
 torch
 hf_xet
+
+# fairseq
+bitarray
+fastBPE
+hydra-core
+omegaconf
+regex
+sacremoses
+subword_nmt
+
+# language detection
+langdetect==1.0.9

@@ -10,7 +10,7 @@ class TesteMTranslator(unittest.TestCase):
         self.mtranslate_tradutor = MTranslator()
 
     def test_mtranslate_tradutor(self):
-        result = self.mtranslate_tradutor.traduzir(self.texto_teste)
+        result = self.mtranslate_tradutor.translate(self.texto_teste)
         self.assertIsInstance(result, str)
         self.assertEqual('Hello everyone', result)
 

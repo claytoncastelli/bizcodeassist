@@ -9,7 +9,7 @@ class TesteMarianMTTranslator(unittest.TestCase):
         self.marian_tradutor = MarianMTTranslator()
 
     def test_marian_tradutor(self):
-        result = self.marian_tradutor.traduzir(self.texto_teste)
+        result = self.marian_tradutor.translate(self.texto_teste)
         self.assertIsInstance(result, str)
         self.assertEqual('Hello, everybody.', result)
 
