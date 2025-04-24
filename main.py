@@ -10,7 +10,9 @@ def main():
 
 
     # # Example of calling company_scraper
-    url = "https://www.cooperators.ca"  # Replace with the URL you want to scrape
+    # url = "https://www.cooperators.ca"  # Replace with the URL you want to scrape
+    url = "https://www.csfoy.ca/accueil"
+    #url = "https://www.lapresse.ca/"
     description_entreprise = scrapper.company_scraper.creer_description_entreprise(url)
     print("Description générée :\n", description_entreprise)
     
@@ -18,13 +20,17 @@ def main():
     # Instanciation du scraper pour les pages statiques
     # url = "https://www.lapresse.ca/"
     # url = "https://www.odq.qc.ca/trouver-un-dentiste/"
-    url = "https://forums.docker.com/t/docker-private-registry-how-to-list-all-images/21136"
-    scraper = FlexibleScraper(url=url, scroll_infinite=True)
+    #url = "https://www.csfoy.ca/accueil"
+    #url = "https://forums.docker.com/t/docker-private-registry-how-to-list-all-images/21136"
+    #url = "https://www.lapresse.ca/"
+    #scraper = FlexibleScraper(url=url, scroll_infinite=True)
     # Effectuer un scraping de page
-    content = scraper.scrape()
+    #content = scraper.scrape()
     # Afficher le contenu extrait
     print("************************************************************")
-    print(content)
+    #print(content)
+    #print(summary_en)
+    
 
 
 
