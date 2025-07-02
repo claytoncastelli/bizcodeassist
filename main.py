@@ -61,5 +61,10 @@ def main():
     summary = sumarizer.summarize(translate_text)
     print("Summary:\n", summary)
 
+    # Pour
+    # utiliser
+    # les
+    # restService - curl "http://localhost:5000/summarise?url=https://www.chezvictorburger.com/"
+
 if __name__ == "__main__":
     main()
