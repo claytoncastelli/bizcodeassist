@@ -6,5 +6,14 @@ class GoogleTranslator(BaseTranslator):
     def __init__(self):
         self.translator = Translator()
 
-    def translate(self, texto: str) -> str:
-        return self.translator.translate(texto, src="fr", dest="en").text
+    def translate(self, text: str) -> str:
+        src_lang = self.detect_language(text)
+        result = text
+        if src_lang == "fr":
+            result =  self.translator.translate(text, src="fr", dest="en").text
+        elif src_lang == "en":
+            result = text
+        else:
+            raise Exception(f"unsupported language {src_lang}")
+        return result
+

@@ -1,4 +1,4 @@
-# pegasus_summarizer.py
+# pegasus_xsum_summarizer.py
 from transformers import pipeline
 from text_processing.summarizer.summarizer import BaseSummarizer
 

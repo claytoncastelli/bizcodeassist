@@ -1,7 +1,8 @@
-# pegasus_summarizer.py
+# pegasus_xsum_summarizer.py
 from transformers import pipeline
 from text_processing.summarizer.summarizer import BaseSummarizer
 
+# https://huggingface.co/docs/transformers/main_classes/pipelines
 class FalconSummarizer(BaseSummarizer):
     def __init__(self):
         print("[falcon summarizer (word count >=500)]")
