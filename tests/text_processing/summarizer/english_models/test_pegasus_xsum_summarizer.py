@@ -1,19 +1,7 @@
 import unittest
 
 # English models
-from text_processing.summarizer.english_models.bart_samsum_summarizer import BartSamsumDialogue
-from text_processing.summarizer.english_models.bart_summarizer import BartLargeCNN
-from text_processing.summarizer.english_models.pegasus_cnn_summarizer import PegasusCNN
 from text_processing.summarizer.english_models.pegasus_xsum_summarizer import PegasusXSUM
-from text_processing.summarizer.english_models.t5_base_summarizer import T5BaseEnglish
-
-
-# Multilingual models
-from text_processing.summarizer.multilingual_models.mt5base_summarizer import MT5BaseSummarizer
-from text_processing.summarizer.multilingual_models.mt5xlsum_summarizer import XLSumSummarizer
-from text_processing.summarizer.multilingual_models.t5base_cnn_summarizer import PierreguillouSummarizer
-
-
 
 class TestPegasusXSUM(unittest.TestCase):
     def test_summary(self):

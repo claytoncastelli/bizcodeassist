@@ -15,7 +15,7 @@ import re
 
 from text_processing.summarizer.summarizer_factory import get_summarizer
 from text_processing.summarizer.summarizer_type import SummarizerType
-from text_processing.summarizer.summarize_text import summarize_text
+
 
 
 
