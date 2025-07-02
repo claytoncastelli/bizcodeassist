@@ -13,7 +13,11 @@ from urllib.parse import urlparse, urljoin
 import time
 import re
 
-# from text_processing.summarizer.text_summarizer import TextSummarizer
+from text_processing.summarizer.summarizer_factory import get_summarizer
+from text_processing.summarizer.summarizer_type import SummarizerType
+
+
+
 
 
 class FlexibleScraper:
@@ -157,56 +161,26 @@ class FlexibleScraper:
             content = "\n".join(" ".join(line.split()) for line in content.splitlines())
         return content
 
-    def description_extraction(self, url: str, timeout: int = 10) -> str:
-        try:
-            # page request
-            response = requests.get(url, timeout=timeout)
-            response.raise_for_status()
-            html = response.text
-
-            # Processa com BeautifulSoup
-            soup = BeautifulSoup(html, "html.parser")
-            meta_tags = ["description", "og:description", "twitter:description"]
-
-            for tag in soup.find_all("meta"):
-                attrs = {k.lower(): v for k, v in tag.attrs.items()}
-                name = attrs.get("name", "").lower()
-                prop = attrs.get("property", "").lower()
-
-                if name in meta_tags or prop in meta_tags:
-                    return attrs.get("content", "").strip()
-
-        except Exception as e:
-            print(f"[Erro]: {e}")
-            pass
-
-        return ""
 
     def scrape(self):
         """
         Démarrez le processus de scraping à l’URL initiale et recherchez les pages internes.
         """
         print('[scraper.py, scrape()]')
-        # summ = TextSummarizer()
-        description = self.description_extraction(self.url)
-        if not description.strip():
-            # try fulll page
-            description = self.remove_white_spaces(self.scrape_page(self.url))
-
-        # description = self.remove_white_spaces(self.scrape_page(self.url))
         
-        # summ_text = summ.summarize(orig_text)
-        #
-        # print('==================')
-        # print('[orig_text]: ', orig_text)
-        # print('-----------')
-        # print('[summ_text]: ', summ_text)
-        # print('-----------')
-        #
-        # return '[orig_text]: '+ orig_text + ' - [summ_text]: '+ summ_text
-        return description
+        orig_text = self.remove_white_spaces(self.scrape_page(self.url))
+                
+        
+        summarizer = get_summarizer(SummarizerType.AUTO, word_count=len(orig_text.split()))
+        summ_text = summarizer.summarize(orig_text)
 
+        print('==================')
+        print('[orig_text]: ', orig_text)
+        print('-----------')
+        print('[summ_text]: ', summ_text)
+        print('-----------')
 
+        return '[orig_text]: '+ orig_text + ' - [summ_text]: '+ summ_text
 
 if __name__ == "__main__":
     url = "https://example.com"  # 🔁 Replace with a real test URL

@@ -23,6 +23,7 @@ transformers
 sentencepiece
 torch
 hf_xet
+langdetect
 
 # fairseq
 bitarray
